@@ -14,6 +14,7 @@ from models import storage
 from models import review
 from models.user import User
 
+
 class HBNBCommand(cmd.Cmd):
     """Class for the command interpreter."""
 
@@ -151,11 +152,11 @@ class HBNBCommand(cmd.Cmd):
             if words[0] not in storage.classes():
                 print("** class doesn't exist **")
             else:
-                l = [str(obj) for key, obj in storage.all().items()
+                i = [str(obj) for key, obj in storage.all().items()
                      if type(obj).__name__ == words[0]]
                 print(l)
         else:
-            l = [str(obj) for key, obj in storage.all().items()]
+            i = [str(obj) for key, obj in storage.all().items()]
             print(l)
 
     def do_count(self, line):
